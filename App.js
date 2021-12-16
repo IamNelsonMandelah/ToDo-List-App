@@ -14,20 +14,21 @@ export default function App() {
     {text:"Arabic Tuts", id :"5"}
   ])
   // the pressHandler function hs to be here because the state resides in this component
+  const submitHandler=(text)=>{
+    setTodo((prevtodo)=>{
+      return [
+        {text:text, id:Math.random().toString()},//new todo list befor the array of prev todos
+        ...prevtodo //previous todo after new todo list
+      ]
+    });
+
+  }
   const pressHandler =(id)=>{
     setTodo((prevtodo)=>{
       return prevtodo.filter(todo=>todo.id !=id);
     })
     // submit new to do list function
-    const submitHandler=(input)=>{
-      setTodo((prevtodo)=>{
-        return [
-          {text:input, id:Math.random().toString()},//new todo list befor the array of prev todos
-          ...prevtodo //previous todo after new todo list
-        ]
-      });
-
-    }
+    
     
           //new todo list being parsed into the  array, as well as its id being converted to string
          // the previous todos also being displayed in the list
@@ -39,7 +40,7 @@ export default function App() {
       {/* Header component goes in here */}
       <Header/>
      <View style={styles.content}>
-     <AddTodo submitHandler={submitHandler}/>
+        <AddTodo submitHandler= {submitHandler}/>
        
          <View style= {styles.list}>
             {/* This is to introduce the Todo list on the content */}

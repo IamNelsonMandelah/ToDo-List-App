@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import {StyleSheet, TextInput, View,Button } from 'react-native';
 
-export default function AddTodo({submitHandler}){
+export default function AddTodo({ submitHandler }){
     const[input, setInput]=useState('')
     //changeHandler function keeps track of the text being typed
      const changeHandler=(val)=>{
@@ -21,7 +21,7 @@ export default function AddTodo({submitHandler}){
             title="Add To do Item"
             // onPress={()=>console.log(input)} testing if the onpress is working where the output is displayed on
             // console terminal
-            onpress={()=>submitHandler(input)}
+            onPress={()=>submitHandler(input)}
             />
         </View>
     )
