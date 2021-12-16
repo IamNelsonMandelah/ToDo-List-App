@@ -23,6 +23,7 @@ const styles= StyleSheet.create({
         position: 'relative',
          top:100,
          marginTop: 20, 
+         marginBottom:30
          
         
         
